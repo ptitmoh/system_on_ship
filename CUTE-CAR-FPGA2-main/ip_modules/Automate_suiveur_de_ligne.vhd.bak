@@ -1,0 +1,36 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY Automate_suiveur_de_ligne IS
+    PORT (
+        posLigne : IN  STD_LOGIC_VECTOR(3 DOWNTO 0);
+        Start_SL : IN  STD_LOGIC;
+		  Fin_SL   : OUT STD_LOGIC;
+        CmdLR_SL : OUT STD_LOGIC_VECTOR(27 DOWNTO 0)
+    );
+END ENTITY Automate_suiveur_de_ligne;
+
+ARCHITECTURE Automate_suiveur_de_ligne_rtl OF Automate_suiveur_de_ligne IS
+	constant PWM_DROIT  : natural := X"288C";
+	constant PWM_GAUCHE : natural := X"388C";
+	constant PID : natural := 40;
+	BEGIN
+		automate: process(Start_SL)
+		variable posL : integer;
+		Variable consigne_MTRR, consigne_MTRL : signed(13 downto 0);
+		begin 
+			if(Start_SL = 1') then
+				posL := to_integer(posLigne) 
+				if(posL < -6 AND posL > 6) then
+					Fin_SL <= '1';
+					CmdLR_SL <= (others => '0');
+				else
+					consigne_MTRR := to_signed((PWM_DROIT + posL*PID),14);
+					consigne_MTRL := to_signed((PWM_DROIT - posL*PID),14);
+					CmdLR_SL <= std_LOGIC_VECTOR(consigne_MTRR & consigne_MTRL);
+				end if;
+			end if;
+		end process automate;
+end Automate_suiveur_de_ligne_rtl; 
+				

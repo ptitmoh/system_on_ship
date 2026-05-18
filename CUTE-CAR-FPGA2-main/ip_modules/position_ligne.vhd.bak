@@ -1,0 +1,72 @@
+ LIBRARY ieee;
+ USE ieee.std_logic_1164.ALL;
+ USE ieee.numeric_std.ALL;
+ 
+ ENTITY position_ligne IS
+	PORT (
+			data_capteur  : IN STD_LOGIC_VECTOR (6 DOWNTO 0);
+			pos_ligne     : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+			data_ready    : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+			led           : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+		)
+END ENTITY position_ligne;
+
+ARCHITECTURE position_ligne_rtl OF position_ligne IS
+
+	BEGIN
+		pos: process(data_ready)
+		variable PPU, PDU : signed(3 DOWNTO 0);
+		variable first_one : boolean := false;
+		begin 
+			if(data_ready='1') then
+				for i in 0 to 6 loop
+					if data_capteur(i) = '1' then
+						if first_one = false then
+							PPU       := to_signed(i)
+							first_one := true;
+						else
+							first_one := true;
+						end if;
+						PDU := to_signed(i)
+					end if
+						
+				pos_ligne <= std_logic_vector(PPU + PDU + to_signed(- 6, 4));
+				for i in to_integer(PPU) to to_integer(PDU) loop
+					led(i)  <= '1';
+			end if
+		end process pos;
+end position_ligne_rtl;
+
+pos: process(clk)  -- Ajout de clk pour un process synchrone
+    variable PPU, PDU : signed(3 DOWNTO 0);
+    variable first_one : boolean;
+begin 
+    if rising_edge(clk) then
+        if data_ready = '1' then
+            first_one := false;  -- Initialisation systématique
+            PPU := (others => '0');
+            PDU := (others => '0');
+
+            for i in 0 to 6 loop
+                if data_capteur(i) = '1' then
+                    if not first_one then
+                        PPU := to_signed(i, 4);
+                        first_one := true;
+                    end if;
+                    PDU := to_signed(i, 4);
+                end if;
+            end loop;
+
+            pos_ligne <= std_logic_vector(PPU + PDU + to_signed(-6, 4));
+
+            for i in to_integer(PPU) to to_integer(PDU) loop
+                led(i) <= '1';
+            end loop;
+        else
+            pos_ligne <= (others => '0');
+            led <= (others => '0');
+        end if;
+    end if;
+end process pos;
+
+					
