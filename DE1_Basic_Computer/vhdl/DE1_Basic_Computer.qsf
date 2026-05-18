@@ -28,7 +28,7 @@ set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name TOP_LEVEL_ENTITY component_tutorial
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 7.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:48:44  NOVEMBER 14, 2007"
-set_global_assignment -name LAST_QUARTUS_VERSION 12.0
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_location_assignment PIN_A13 -to GPIO_0[0]
 set_location_assignment PIN_B13 -to GPIO_0[1]
 set_location_assignment PIN_A14 -to GPIO_0[2]
