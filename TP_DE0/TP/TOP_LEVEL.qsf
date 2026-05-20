@@ -53,10 +53,7 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE ip_modules/PWM_avalon_interface.vhd
 set_global_assignment -name QIP_FILE nios_system/synthesis/nios_system.qip
-set_global_assignment -name VHDL_FILE ip_modules/PWM_generation.vhd
-set_global_assignment -name VHDL_FILE ip_modules/pll_2freqs.vhd
 set_global_assignment -name VHDL_FILE TOP_LEVEL.vhd
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_location_assignment PIN_R8 -to CLOCK_50

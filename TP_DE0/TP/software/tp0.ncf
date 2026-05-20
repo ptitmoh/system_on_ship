@@ -4,7 +4,7 @@
         <system_info filepath="true">..\nios_system.qsys</system_info>
         <system_sof filepath="true">..\TOP_LEVEL.sof</system_sof>
         <system_jdi filepath="true"/>
-        <cable>USB-Blaster [USB-0]</cable>
+        <cable>null</cable>
         <processor JTAGHubInstanceID="0">nios2_processor</processor>
         <terminal JTAGHubInstanceID="0">jtag_uart</terminal>
     </system>

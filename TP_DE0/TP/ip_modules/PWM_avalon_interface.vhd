@@ -36,15 +36,11 @@ ARCHITECTURE Structure OF PWM_avalon_interface IS
 
 BEGIN
 
-    -- -------------------------------------------------------
-    -- Décodage écriture : chipselect AND write AND adresse
-    -- -------------------------------------------------------
+
     we_R <= chipselect AND write AND (NOT address);
     we_L <= chipselect AND write AND address;
 
-    -- -------------------------------------------------------
-    -- Registre moteur DROIT
-    -- -------------------------------------------------------
+
     PROCESS(clk, reset_n)
     BEGIN
         IF reset_n = '0' THEN
@@ -61,9 +57,7 @@ BEGIN
         END IF;
     END PROCESS;
 
-    -- -------------------------------------------------------
-    -- Registre moteur GAUCHE
-    -- -------------------------------------------------------
+
     PROCESS(clk, reset_n)
     BEGIN
         IF reset_n = '0' THEN
@@ -80,16 +74,12 @@ BEGIN
         END IF;
     END PROCESS;
 
-    -- -------------------------------------------------------
-    -- Lecture : mux sur l'adresse
-    -- -------------------------------------------------------
+
     readdata <= "00" & reg_R WHEN (chipselect AND read) = '1' AND address = '0' ELSE
                 "00" & reg_L WHEN (chipselect AND read) = '1' AND address = '1' ELSE
                 (OTHERS => '0');
 
-    -- -------------------------------------------------------
-    -- Instanciation du PWM
-    -- -------------------------------------------------------
+
     pwm_inst : PWM_generation
         PORT MAP (
             clk          => clk,

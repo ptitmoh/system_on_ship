@@ -15,7 +15,11 @@
 			pwm1_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
 			pwm2_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
 			pwm3_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
-			pwm4_writeresponsevalid_n : out   std_logic                                         -- writeresponsevalid_n
+			pwm4_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
+			adc_sck_export            : out   std_logic;                                        -- export
+			adc_sdi_export            : out   std_logic;                                        -- export
+			adc_sdo_export            : in    std_logic                     := 'X';             -- export
+			adc_convst_export         : out   std_logic                                         -- export
 		);
 	end component nios_system;
 

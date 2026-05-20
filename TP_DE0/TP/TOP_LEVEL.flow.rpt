@@ -1,6 +1,6 @@
 Flow report for TOP_LEVEL
-Mon May 18 12:09:26 2026
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Wed May 20 14:59:11 2026
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
 ---------------------
@@ -37,26 +37,26 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------+
-; Flow Summary                                                                         ;
-+------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon May 18 12:09:23 2026           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
-; Revision Name                      ; TOP_LEVEL                                       ;
-; Top-level Entity Name              ; TOP_LEVEL                                       ;
-; Family                             ; Cyclone IV E                                    ;
-; Device                             ; EP4CE22F17C6                                    ;
-; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 2,655 / 22,320 ( 12 % )                         ;
-;     Total combinational functions  ; 2,371 / 22,320 ( 11 % )                         ;
-;     Dedicated logic registers      ; 1,705 / 22,320 ( 8 % )                          ;
-; Total registers                    ; 1774                                            ;
-; Total pins                         ; 60 / 154 ( 39 % )                               ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 142,336 / 608,256 ( 23 % )                      ;
-; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                                 ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
-+------------------------------------+-------------------------------------------------+
++---------------------------------------------------------------------------------------+
+; Flow Summary                                                                          ;
++------------------------------------+--------------------------------------------------+
+; Flow Status                        ; Successful - Wed May 20 14:58:38 2026            ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
+; Revision Name                      ; TOP_LEVEL                                        ;
+; Top-level Entity Name              ; TOP_LEVEL                                        ;
+; Family                             ; Cyclone IV E                                     ;
+; Device                             ; EP4CE22F17C6                                     ;
+; Timing Models                      ; Final                                            ;
+; Total logic elements               ; 3,244 / 22,320 ( 15 % )                          ;
+;     Total combinational functions  ; 2,709 / 22,320 ( 12 % )                          ;
+;     Dedicated logic registers      ; 2,208 / 22,320 ( 10 % )                          ;
+; Total registers                    ; 2277                                             ;
+; Total pins                         ; 60 / 154 ( 39 % )                                ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 142,336 / 608,256 ( 23 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 132 ( 0 % )                                  ;
+; Total PLLs                         ; 2 / 4 ( 50 % )                                   ;
++------------------------------------+--------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/18/2026 12:08:57 ;
+; Start date & time ; 05/20/2026 14:56:37 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TOP_LEVEL           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------+---------------+------------------------------------------+------------+
 ; Assignment Name                     ; Value                                                         ; Default Value ; Entity Name                              ; Section Id ;
 +-------------------------------------+---------------------------------------------------------------+---------------+------------------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589192.177909893630332                                ; --            ; --                                       ; --         ;
+; COMPILER_SIGNATURE_ID               ; 154946507545927.177928179723092                               ; --            ; --                                       ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                          ; --            ; altera_avalon_sc_fifo                    ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                          ; --            ; altera_avalon_st_handshake_clock_crosser ; --         ;
 ; IP_TOOL_ENV                         ; Qsys                                                          ; --            ; altera_merlin_burst_adapter              ; --         ;
@@ -172,7 +172,7 @@ applicable agreement for further details.
 ; PARTITION_NETLIST_TYPE              ; SOURCE                                                        ; --            ; --                                       ; Top        ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                           ; --            ; --                                       ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                         ; --            ; --                                       ; --         ;
-; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1779098911 ; --            ; nios_system                              ; --         ;
+; SLD_INFO                            ; QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1779281752 ; --            ; nios_system                              ; --         ;
 ; SOPCINFO_FILE                       ; nios_system/synthesis/../../nios_system.sopcinfo              ; --            ; --                                       ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                            ; --            ; --                                       ; --         ;
 +-------------------------------------+---------------------------------------------------------------+---------------+------------------------------------------+------------+
@@ -183,11 +183,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 4767 MB             ; 00:00:10                           ;
-; Fitter                    ; 00:00:12     ; 1.0                     ; 4980 MB             ; 00:00:12                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4570 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4680 MB             ; 00:00:03                           ;
-; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis      ; 00:00:31     ; 1.0                     ; 517 MB              ; 00:00:18                           ;
+; Fitter                    ; 00:00:52     ; 1.5                     ; 759 MB              ; 00:00:23                           ;
+; Assembler                 ; 00:00:39     ; 1.0                     ; 413 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:31     ; 1.0                     ; 500 MB              ; 00:00:05                           ;
+; Total                     ; 00:02:33     ; --                      ; --                  ; 00:00:48                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -196,10 +196,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Mohamed-Cherif   ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; Mohamed-Cherif   ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; Mohamed-Cherif   ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Mohamed-Cherif   ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; a-137147         ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; a-137147         ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; a-137147         ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; a-137147         ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

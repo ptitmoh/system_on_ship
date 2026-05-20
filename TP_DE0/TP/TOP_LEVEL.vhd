@@ -58,22 +58,17 @@
             pwm1_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
             pwm2_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
             pwm3_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
-            pwm4_writeresponsevalid_n : out   std_logic                                         -- writeresponsevalid_n
+            pwm4_writeresponsevalid_n : out   std_logic;                                        -- writeresponsevalid_n
+				adc_sck_export            : out   std_logic;                                        -- export
+            adc_sdi_export            : out   std_logic;                                        -- export
+            adc_sdo_export            : in    std_logic                     := 'X';             -- export
+            adc_convst_export         : out   std_logic 
         );
     end component nios_system;
 	 
 	 
 
 
-	component pll_2freqs IS
-			PORT
-			(
-				areset		: IN STD_LOGIC  := '0';
-				inclk0		: IN STD_LOGIC  := '0';
-				c0		      : OUT STD_LOGIC ;
-				c1		      : OUT STD_LOGIC 
-			);
-	END component pll_2freqs;
 		
 
 	
@@ -98,19 +93,16 @@
 				pwm1_writeresponsevalid_n => MTRL_P,  -- dc_motor_p_L
 				pwm2_writeresponsevalid_n => MTRL_N,  -- dc_motor_n_L
 				pwm3_writeresponsevalid_n => MTRR_P,  -- dc_motor_p_R
-				pwm4_writeresponsevalid_n => MTRR_N   -- dc_motor_n_R
+				pwm4_writeresponsevalid_n => MTRR_N,   -- dc_motor_n_R
+    		 adc_sck_export            => LTC_ADC_SCK,            --    adc_sck.export
+           adc_sdi_export            => LTC_ADC_SDI,            --    adc_sdi.export
+           adc_sdo_export            => LTC_ADC_SDO,            --    adc_sdo.export
+           adc_convst_export         => LTC_ADC_CONVST          -- adc_convst.expor
 			); 
 			
 
 
-	pll2freqs: pll_2freqs
-	PORT MAP (
-				areset		    => not(KEY(0)),
-				inclk0		    => CLOCK_50,
-				c0		    	=> clk_40MHZ,
-				c1		    	=> clk_2KHZ
-			);
-			
+		 
 
 
 			
